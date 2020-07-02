@@ -67,7 +67,7 @@ def intensity(theta1,theta3,theta4,theta2min, theta2max,l= np.array([1,0]), thet
     return(theta2s,darkport_intensity(theta2s))
 
 
-def vertical(theta1,theta3,theta2min, theta2max):
+def vertical(theta1,theta3,theta2min, theta2max,ymax=0.2):
     "this plots the the vertical light coming out of the dark port"
     x2s,Vt = intensity(theta1,theta3,90,theta2min, theta2max)
     f=plt.figure(figsize=(4,3))
@@ -78,10 +78,13 @@ def vertical(theta1,theta3,theta2min, theta2max):
     plt.title('Vertical Dark Port Intensity vs Polarizer Angle')
     plt.grid(True)
     plt.xlim((theta2min,theta2max))
+    plt.ylim((0,ymax))
     plt.show()
-    return(f)
+    
 
-def horizontal(theta1,theta3,theta2min, theta2max ):
+
+
+def horizontal(theta1,theta3,theta2min, theta2max, ymax=0.2 ):
     "this plots the horizontal light coming out of the darkport"
     x2s,Hz = intensity(theta1,theta3,0, theta2min, theta2max)
     f=plt.figure(figsize=(4,3))
@@ -92,8 +95,10 @@ def horizontal(theta1,theta3,theta2min, theta2max ):
     plt.title("Horizontal Dark Port Intensity vs Polarizer Angle")
     plt.grid(True)
     plt.xlim((theta2min,theta2max))
+    plt.ylim((0,ymax))
     plt.show()
-    return(f)
+
+
 
 def split(theta1,theta3,theta2min, theta2max):
     "bright port minus dark ratio to total initial intensity"
@@ -110,4 +115,3 @@ def split(theta1,theta3,theta2min, theta2max):
     plt.xlim((theta2min,theta2max))
     plt.grid(True)
     plt.show()
-    return(f)
