@@ -67,7 +67,7 @@ def intensity(theta1,theta3,theta4,theta2min, theta2max,l= np.array([1,0]), thet
     return(theta2s,darkport_intensity(theta2s))
 
 
-def vertical(theta1,theta3,theta2min, theta2max,ymax=0.2):
+def vertical(theta1,theta3,theta2min, theta2max,ymax=0.2,n=.1):
     "this plots the the vertical light coming out of the dark port"
     x2s,Vt = intensity(theta1,theta3,90,theta2min, theta2max)
     f=plt.figure(figsize=(4,3))
@@ -84,7 +84,7 @@ def vertical(theta1,theta3,theta2min, theta2max,ymax=0.2):
 
 
 
-def horizontal(theta1,theta3,theta2min, theta2max, ymax=0.2 ):
+def horizontal(theta1,theta3,theta2min, theta2max, ymax=0.2,n=.1 ):
     "this plots the horizontal light coming out of the darkport"
     x2s,Hz = intensity(theta1,theta3,0, theta2min, theta2max)
     f=plt.figure(figsize=(4,3))
@@ -100,7 +100,7 @@ def horizontal(theta1,theta3,theta2min, theta2max, ymax=0.2 ):
 
 
 
-def split(theta1,theta3,theta2min, theta2max):
+def split(theta1,theta3,theta2min, theta2max,n=.1):
     "bright port minus dark ratio to total initial intensity"
 
     x2s,Vt = intensity(theta1,theta3,90,theta2min, theta2max)
