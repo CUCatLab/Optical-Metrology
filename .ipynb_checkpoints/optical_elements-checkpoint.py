@@ -11,7 +11,7 @@ def hwp(x1): # make all hwp functions lower case (only classer are upper case)
 
 def pol(n=.1):
     "polarizer with leakage"
-    hp = np.array([[np.sqrt(1-n**2), 0],[0, n]]) #polarizer
+    hp = np.array([[n, 0],[0, np.sqrt(1-n**2)]]) #polarizer set to vertical
     return(hp)
 
 def rm(x1,n=.1):

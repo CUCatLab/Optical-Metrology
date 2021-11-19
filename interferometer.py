@@ -34,7 +34,7 @@ def intensity(theta1,theta3,theta4,theta2min,theta2max, l= np.array([1, 0]), the
              polarization leakage for 2nd half waveplate polarizer set up
          deff : float
              polarization leakage for the polarizer inbetween the interferometer set up and the detector
-    Returns
+    Return
     -------
         type :
             the return value should be a range of intensities that are a result of the final intensity coming out of the set up
